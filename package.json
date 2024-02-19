@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "wdio": "wdio run ./wdio.conf.js"
+    "wdio": "wdio run ./wdio.conf.js",
+    "allure-report": "allure generate --clean allure-results && allure open",
+    "pretest": "rimraf allure-results && rimraf allure-report && rimraf test-screenshots && rimraf wdio-logs"
+
+
   },
   "author": "",
   "license": "ISC",
@@ -19,6 +23,7 @@
     "allure-commandline": "^2.27.0",
     "chai": "^4.4.1",
     "chromedriver": "^120.0.0",
+    "rimraf": "^5.0.5",
     "wdio-chromedriver-service": "^8.1.1"
   },
   "dependencies": {

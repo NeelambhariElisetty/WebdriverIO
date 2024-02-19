@@ -1,4 +1,5 @@
-
+const allure = require('allure-commandline')
+//let allureDir = "./reports/allure"
 exports.config = {
     //
     // ====================
@@ -210,6 +211,22 @@ exports.config = {
      * @param {object} suite suite details
      */
     // beforeSuite: function (suite) {
+    //     const fs = require('fs')
+    //     let dir = allureDir + '/allure-results'
+    //     try {
+    //         if (fs.existsSync(dir)) {
+    //             fs.rmSync(dir, { recursive: true })
+    //         }
+    //         console.log(`${dir} is deleted!`)
+    //     }
+    //     catch (err) {
+    //         console.log('Error while deleting this dir');
+    //         if (!fs.existsSync(dir)) {
+    //             fs.mkdirSync(dir, { recursive: true })
+    //             console.log("dir got created")
+    //         }
+    //     }
+
     // },
     /**
      * Function to be executed before a test (in Mocha/Jasmine) starts.
@@ -294,6 +311,27 @@ exports.config = {
      */
     // onComplete: function(exitCode, config, capabilities, results) {
     // },
+    // onComplete: function () {
+    //     const reportError = new Error('Could not generate Allure report')
+    //     const generation = allure(['generate', allureDir + '/allure-results', '--clean', '-o', allureDir+'/allure-report'])
+    //     return new Promise((resolve, reject) => {
+    //         const generationTimeout = setTimeout(
+    //             () => reject(reportError),
+    //             5000)
+
+    //         generation.on('exit', function (exitCode) {
+    //             clearTimeout(generationTimeout)
+
+    //             if (exitCode !== 0) {
+    //                 return reject(reportError)
+    //             }
+
+    //             console.log('Allure report successfully generated')
+    //             resolve()
+    //         })
+    //     })
+    // }
+
     /**
     * Gets executed when a refresh happens.
     * @param {string} oldSessionId session ID of the old session
